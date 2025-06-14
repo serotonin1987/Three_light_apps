@@ -5,7 +5,7 @@ class CalculatorApp:
         self.window = tk.Tk()
         self.window.title("Калькулятор")
         
-        # Устанавливаем размер окна (ширина x высота)
+
         self.window.geometry("400x500")
 
         self.entry = tk.Entry(self.window, width=30, font=("Arial", 18))
@@ -16,7 +16,7 @@ class CalculatorApp:
             ("4", 2, 0), ("5", 2, 1), ("6", 2, 2), ("*", 2, 3),
             ("1", 3, 0), ("2", 3, 1), ("3", 3, 2), ("-", 3, 3),
             ("0", 4, 0), (".", 4, 1), ("=", 4, 2), ("+", 4, 3),
-            ("X", 5, 0)  # Кнопка для удаления последнего символа
+            ("X", 5, 0)
         ]
 
         for (text, row, col) in buttons:
@@ -35,7 +35,6 @@ class CalculatorApp:
                 self.entry.delete(0, tk.END)
                 self.entry.insert(tk.END, "Ошибка")
         elif char == "X":
-            # Удаляем последний символ
             current_text = self.entry.get()
             self.entry.delete(len(current_text)-1, tk.END)
         else:
